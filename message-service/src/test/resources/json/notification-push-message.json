@@ -1,0 +1,9 @@
+{
+  "title": "Bubble Nebula",
+  "clientToken": "токен браузера",
+  "body": "It's found today at 11:36",
+  "urlIcon": "https://peter-gribanov.github.io/serviceworker/Bubble-Nebula.jpg",
+  "urlImage": "https://peter-gribanov.github.io/serviceworker/Bubble-Nebula.jpg",
+  "urlAction": "https://www.nasa.gov/feature/goddard/2016/hubble-sees-a-star-inflating-a-giant-bubble",
+  "ttlInSeconds": "0"
+}

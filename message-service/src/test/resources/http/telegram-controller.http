@@ -1,0 +1,9 @@
+POST http://localhost:8010/telegram/text_message/send
+Content-Type: application/json
+
+{
+  "chatId": "ид чата",
+  "message": "Тестовое сообщение из телеграмма"
+}
+
+###

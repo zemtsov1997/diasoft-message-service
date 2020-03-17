@@ -1,0 +1,11 @@
+POST http://localhost:8010/simpleMail/send
+Content-Type: application/json
+
+{
+  "from": "емайл отправителя",
+  "to": "емайл получателя",
+  "subject": "Test simple mail",
+  "content": "this is content"
+}
+
+###

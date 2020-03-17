@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- jQuery -->
+    <script type="text/javascript" src="/jquery.min.js"></script>
+    <script type="text/javascript" src="/firebase.min.js"></script>
+    <script type="text/javascript" src="/firebase_subscribe.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(function () {
+            $("#subscribe").click(function () {
+                console.log("click");
+                getToken();
+            });
+
+            $("#del-token").click(function () {
+                console.log("del");
+                messaging.getToken()
+                    .then(function(currentToken) {
+                        messaging.deleteToken(currentToken)
+                            .then(function() {
+                                console.log('Token deleted');
+                                setTokenSentToServer(false);
+                            })
+                            .catch(function(error) {
+                                console.warn('Unable to delete token', error);
+                            });
+                    })
+                    .catch(function(error) {
+                        console.warn('Error retrieving Instance ID token', error);
+                    });
+            });
+        });
+    </script>
+    <button type="button" id="subscribe">Следить за изменениями</button>
+    <button type="button" id="del-token">Удалить токен</button>
+</body>
+</html>

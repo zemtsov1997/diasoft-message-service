@@ -1,0 +1,9 @@
+POST http://localhost:8010/discord/text_message/send
+Content-Type: application/json
+
+{
+  "userId": "ид получателя",
+  "message": "Тестовое сообщение из Discord"
+}
+
+###

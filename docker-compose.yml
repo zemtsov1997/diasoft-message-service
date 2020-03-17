@@ -1,0 +1,57 @@
+version: '3.7'
+
+networks:
+  lan_database:
+
+services:
+
+  eureka-server:
+    hostname: localhost
+    network_mode: host
+    build:
+      context: ./eureka-server
+    restart: always
+    ports:
+      - 8761:8761
+    volumes:
+      - /opt/eureka-server/logs:/opt/eureka-server/logs
+      
+  message-service:
+    hostname: localhost
+    network_mode: host
+    build:
+      context: ./message-service
+    restart: always
+    environment:
+      DB_HOST: localhost
+      DB_PORT: 3306
+      DB_NAME: message_service
+      DB_USER: message_service
+      DB_PASSWORD: message_service
+    ports:
+      - 8010:8010
+    volumes:
+      - /opt/message-service/logs:/opt/message-service/logs
+
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - 8082:8080
+    networks:
+      - lan_database
+
+  db:
+    image: mysql:8.0.17
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123zemtsov321
+    ports:
+      - 3306:3306
+    volumes:
+      - /opt/mysql01:/var/lib/mysql
+    security_opt:
+      - seccomp:unconfined
+    networks:
+      - lan_database

@@ -1,0 +1,2 @@
+INSERT IGNORE INTO social_user (id, email, number_phone, notification_token, telegram_chat_id, vk_user_id, discord_user_id)
+VALUES (1, 'почта', 'номер тел', 'токен браузера', 'чат ид телеграма', 'ид юзера вк', 'ид дискорд юзера');

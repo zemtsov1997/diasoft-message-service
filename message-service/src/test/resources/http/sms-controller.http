@@ -1,0 +1,23 @@
+POST http://localhost:8010/sms/send
+Content-Type: application/json
+
+{
+  "numberPhoneRecipients": ["номер телефона"],
+  "message": "Я Алексей, отправляю сообщение ENGLISH..."
+}
+
+###
+
+POST http://localhost:8010/sms/cost
+Content-Type: application/json
+
+{
+  "numberPhoneRecipients": ["номер телефона"],
+  "message": "Я Алексей, проверяю стоимость сообщения ENGLISH..."
+}
+
+###
+
+GET http://localhost:8010/sms/balance
+
+###

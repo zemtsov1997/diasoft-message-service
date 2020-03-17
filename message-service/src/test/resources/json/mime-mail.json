@@ -1,0 +1,7 @@
+{
+  "from": "почта сервиса",
+  "to": "почта получателя",
+  "subject": "Test mime mail",
+  "props": {},
+  "htmlTemplate": "0"
+}

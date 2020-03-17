@@ -1,0 +1,9 @@
+POST http://localhost:8010/vk/text_message/send
+Content-Type: application/json
+
+{
+  "userId": "юзер ид получателя",
+  "message": "Тестовое сообщение из вк"
+}
+
+###

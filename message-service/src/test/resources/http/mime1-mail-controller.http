@@ -1,0 +1,12 @@
+POST http://localhost:8010/mimeMail/send
+Content-Type: application/json
+
+{
+  "from": "емайл сервиса",
+  "to": "емайл получателя",
+  "subject": "Test mime mail",
+  "props": {},
+  "htmlTemplate": "0"
+}
+
+###

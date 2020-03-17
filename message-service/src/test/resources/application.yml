@@ -1,0 +1,69 @@
+eureka:
+  client:
+    enabled: false
+
+spring:
+  datasource:
+    platform: h2
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:database
+    username: sa
+    initialization-mode: always
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+      current_session_context_class: thread
+      enable_lazy_load_no_trans: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    format-sql: true
+  mail:
+    default-encoding: UTF-8
+    host: ${MAIL_HOST:smtp.mail.ru}
+    protocol: ${MAIL_PROTOCOL:smtp}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_LOGIN:логин почты}
+    password: ${MAIL_PASSWORD:пароль почты}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+    test-connection: false
+
+bot:
+  facebook:
+    app-id: app id here
+    verify-token: verify token here
+    page-access-token: access token here
+
+  vk:
+    auth-token: токен группы вк
+    group-id: ид группы вк
+
+  discord:
+    auth-token: токен дискорда
+
+  telegram:
+    name: имя телеграм бота
+    auth-token: токен телеграм бота
+
+notification:
+  service-account-file: classpath:firebase-key.json
+
+sms:
+  login: ${SMS_LOGIN:логин ака}
+  password: ${SMS_PASSWORD:пароль}
+  is-https: ${SMS_IS_HTTPS:false}
+  charset: ${SMS_CHARSET:UTF-8}
+  is-post: ${SMS_IS_POST:true}
+  sender:
+    name: ${SMS_SENDER_NAME:ALEXEY}
+
+application:
+  max-minutes-for-send-message: 15

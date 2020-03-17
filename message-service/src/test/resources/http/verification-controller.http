@@ -1,0 +1,97 @@
+POST http://localhost:8010/verification/send_code/simple_mail
+Content-Type: application/json
+
+{
+  "from": "емайл отправителя",
+  "to": "емайл получателя",
+  "processUuid": "6c6359e1-3077-43e8-ae80-885af2ddf0cd",
+  "subject": "Test simple mail",
+  "content": "Код подверждения: 1234",
+  "verificationStatus": "1",
+  "verificationCode": "1234"
+}
+
+###
+
+POST http://localhost:8010/verification/send_code/mime_mail
+Content-Type: application/json
+
+{
+  "from": "емайл отправителя",
+  "to": "емайл получателя",
+  "subject": "Код подверждения: 1234",
+  "props": {},
+  "htmlTemplate": "0",
+  "processUuid": "6c6359e1-3077-43e8-ae80-885af2ddf0cf",
+  "verificationStatus": "1",
+  "verificationCode": "1234"
+}
+
+###
+
+POST http://localhost:8010/verification/send_code/sms?dateTime=2020-02-18T10:59:30
+Content-Type: application/json
+
+{
+  "numberPhoneRecipients": ["номер телефона"],
+  "message": "Ваш проверочный код: 1234",
+  "processUuid": "6c6359e1-3077-43e8-ae80-885af2ddf0cd",
+  "verificationStatus": "1",
+  "verificationCode": "1234"
+}
+
+###
+
+POST http://localhost:8010/verification/send_code/push_message
+Content-Type: application/json
+
+{
+  "title": "Bubble Nebula",
+  "clientToken": "токен браузера",
+  "body": "It's found today at 11:36",
+  "urlIcon": "https://peter-gribanov.github.io/serviceworker/Bubble-Nebula.jpg",
+  "urlImage": "https://peter-gribanov.github.io/serviceworker/Bubble-Nebula.jpg",
+  "urlAction": "http://localhost:8010/verification/7340ec22-0cf3-41c5-8a69-c738d2b600dd?code=1234",
+  "ttlInSeconds": "0",
+  "processUuid": "7340ec22-0cf3-41c5-8a69-c738d2b600dd",
+  "verificationStatus": "1",
+  "verificationCode": "1234"
+}
+
+###
+
+POST http://localhost:8010/verification/send_code/telegram_message
+Content-Type: application/json
+
+{
+  "chatId": "чат ид получателя",
+  "message": "Ваш проверочный код: 1234",
+  "processUuid": "7340ec22-0cf3-41c5-8a69-c738d2b600dd",
+  "verificationStatus": "1",
+  "verificationCode": "1234"
+}
+
+###
+
+POST http://localhost:8010/verification/send_code/vk_message?dateTime=null
+Content-Type: application/json
+
+{
+  "userId": "вк ид юзера",
+  "message": "Ваш проверочный код: 1234",
+  "processUuid": "7340ec22-0cf3-41c5-8a69-c738d2b600dd",
+  "verificationStatus": "1",
+  "verificationCode": "1234"
+}
+
+###
+
+GET http://localhost:8010/verification/7340ec22-0cf3-41c5-8a69-c738d2b600dd?code=12345
+
+###
+
+GET http://localhost:8010/verification/7340ec22-0cf3-41c5-8a69-c738d2b600dd/get_status
+
+###
+
+

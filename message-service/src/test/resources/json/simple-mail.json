@@ -1,0 +1,6 @@
+{
+  "from": "емайл сервиса",
+  "to": "емайл получателя",
+  "subject": "Test simple mail",
+  "content": "this is content"
+}
